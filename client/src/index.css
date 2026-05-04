@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #0B0F19;
+    color: #f3f4f6;
+    @apply font-sans antialiased overflow-x-hidden;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+/* Premium Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0B0F19; 
+}
+::-webkit-scrollbar-thumb {
+  background: #374151; 
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #4B5563; 
+}
+
+/* Glassmorphism Utilities */
+.glass-panel {
+  @apply bg-surface/60 backdrop-blur-xl border border-white/10 shadow-xl;
+}
+
+.glass-input {
+  @apply bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all;
+}
+
+.glass-button {
+  @apply bg-primary-500 hover:bg-primary-400 text-gray-900 font-bold py-2 px-4 rounded-lg shadow-[0_0_15px_rgba(249,115,22,0.5)] hover:shadow-[0_0_25px_rgba(249,115,22,0.7)] transition-all duration-300;
+}
+
+/* Global Form Overrides for Deep Pages */
+form input:not([type="radio"]):not([type="checkbox"]), 
+form select, 
+form textarea {
+    background-color: rgba(17, 24, 39, 0.5) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: #ffffff !important; /* Force white text */
+    border-radius: 0.5rem !important;
+    padding: 0.75rem 1rem !important;
+}
+
+form input::placeholder,
+form textarea::placeholder {
+    color: rgba(156, 163, 175, 1) !important; /* gray-400 */
+}
+
+form label {
+    color: rgba(209, 213, 219, 1) !important; /* gray-300 */
+}
+
+form span {
+    color: rgba(209, 213, 219, 1) !important; /* gray-300 */
+}
+
+/* Override default gray-50/white buttons in forms */
+form button.bg-white {
+    background-color: rgba(31, 41, 55, 1) !important; /* surfaceHover */
+    color: rgba(209, 213, 219, 1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+form button.bg-blue-600 {
+    background-color: #F97316 !important;
+    color: #111827 !important;
+    font-weight: bold !important;
+    border: none !important;
+}
